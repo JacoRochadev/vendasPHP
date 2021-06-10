@@ -5,7 +5,7 @@
  *arquivo que faz conexão com o banco de dados
  */
 
-require_once './../config.php';
+require_once './../../config.php';
 
 class DB {
     private static $instance;

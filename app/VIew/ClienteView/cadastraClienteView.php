@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once './../Controller/ClientesController.php';
-require_once './../Model/Cliente.php';
+require_once './../../Controller/ClientesController.php';
+require_once './../../Model/Cliente.php';
 
 
 ?>
@@ -37,6 +37,8 @@ require_once './../Model/Cliente.php';
             <input type="submit" name="cadastrar"/>
         
     </form>
+    <br>
+    <a href="./listarClientes.php"> listar </a>
 
 </body>
 </html>

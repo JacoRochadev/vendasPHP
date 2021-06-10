@@ -3,8 +3,8 @@
 /**
  * contem metodos basicos para criar, deletar, Lê e apagar dados no BD
  */
-require_once './../Model/Produto.php';
-require_once './../Model/DB.php';
+require_once './../../Model/Produto.php';
+require_once './../../Model/DB.php';
 
  class ProdutosController extends Produtos
  {

@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once './../Controller/ProdutosController.php';
-require_once './../Model/Produto.php';
+require_once './../../Controller/ProdutosController.php';
+require_once './../../Model/Produto.php';
 
 
 ?>
@@ -41,6 +41,6 @@ require_once './../Model/Produto.php';
             <input type="submit" name="cadastrar"/>
         
     </form>
-
+    <a href="./listarProdutos.php">listar</a>
 </body>
 </html>

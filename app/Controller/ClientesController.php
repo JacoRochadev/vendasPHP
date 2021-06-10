@@ -4,8 +4,8 @@
  * Salvar como Clientes.php
  * contem metodos basicos para criar, deletar, Lê e apagar dados no BD
  */
-require_once './../Model/Cliente.php';
-require_once './../Model/DB.php';
+require_once './../../Model/Cliente.php';
+require_once './../../Model/DB.php';
 
  class ClientesController extends CLientes {
     
