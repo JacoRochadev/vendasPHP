@@ -10,7 +10,7 @@ require_once './../../Controller/ProdutosController.php';
 <html lang="pt-BR">
 
 <head>
-        <title>Lista de Produtos - WEB I</title>
+        <title>Lista de Produtos</title>
 </head>
 
 <body>

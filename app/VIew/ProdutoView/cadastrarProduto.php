@@ -11,7 +11,7 @@ require_once './../../Model/Produto.php';
 <!DOCTYPE HTML>
 <html lang="pt-BR">
 <head>
-        <title>cadastro de Produtos - WEB I</title>
+        <title>Cadastrar Produtos</title
 
 </head>
 
