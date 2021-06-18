@@ -9,7 +9,6 @@
 <body>
 <?php
     require './../../Controller/ClientesController.php';
-    $clienteM = new Clientes();
     $idCliente = $_POST['idCliente'];
     $cliente = new ClientesController();
     $cliente->setIdCliente($idCliente);
@@ -18,7 +17,7 @@
     <form action="./alterarCliente.php?id=<?= $cliente->getIdCliente() ?>" method="post">
         <h1>Update</h1>
         <label>Nome Cliente</label>
-        <input type="text" value="<?= $cliente->$nome ?>" name="nome_cliente" class="form-control" id="nome_cliente" required>
+        <input type="text" value="<?= $cliente->getNome() ?>" name="nome_cliente" class="form-control" id="nome_cliente" required>
 
 
         <div class="button">
