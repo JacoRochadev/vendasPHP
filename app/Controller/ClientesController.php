@@ -7,7 +7,7 @@
 require_once './../../Model/Cliente.php';
 require_once './../../Model/DB.php';
 
- class ClientesController extends CLientes {
+ class ClientesController extends Clientes {
     
     protected $tabela = 'clientes';  //define a tabela do banco
 

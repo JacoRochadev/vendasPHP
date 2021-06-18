@@ -5,8 +5,9 @@ require_once './../../Model/DB.php';    //inclui arquivo DB
  abstract class Produtos extends DB {   //faz herança do arquivo DB
     
     private $idProduto;
-    public $nome;
-    public $preco;
+    private $nome;
+    private $preco;
+    private $quantidade;
 
     public function __construct()
     {
@@ -38,6 +39,26 @@ require_once './../../Model/DB.php';    //inclui arquivo DB
     public function setIdProduto($idProduto)
     {
         $this->idProduto = $idProduto;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of quantidade
+     */ 
+    public function getQuantidade()
+    {
+        return $this->quantidade;
+    }
+
+    /**
+     * Set the value of quantidade
+     *
+     * @return  self
+     */ 
+    public function setQuantidade($quantidade)
+    {
+        $this->quantidade = $quantidade;
 
         return $this;
     }

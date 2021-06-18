@@ -2,10 +2,10 @@
 ##arquivo que implementa a tabela e seus atributos, acessa os metodos get e set
 require_once './../../Model/DB.php';    //inclui arquivo DB 
 
- abstract class CLientes extends DB {   //faz herança do arquivo DB
+ abstract class Clientes extends DB {   //faz herança do arquivo DB
     
     private $idCliente;
-    public $nome;
+    protected $nome;
 
     public function __construct()
     {

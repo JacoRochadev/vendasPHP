@@ -10,7 +10,7 @@ require_once './../../Controller/ClientesController.php';
 <html lang="pt-BR">
 
 <head>
-        <title>Lista de Clientes - WEB I</title>
+        <title>Lista de Clientes</title>
 </head>
 
 <body>
@@ -27,10 +27,10 @@ require_once './../../Controller/ClientesController.php';
                     
                     $cliente = New ClientesController;
 
-                    //exclusao de Usuario
+                    //exclusao de Cliente
                     if (isset($_POST['excluir'])){
                                             
-                        $id = $_POST['id'];
+                        $idCliente = $_POST['id'];
                         
                         $cliente->delete($id);
                     }
@@ -41,15 +41,15 @@ require_once './../../Controller/ClientesController.php';
                         <td> <?php echo $value->nome;?> </td>
                         <td>
 
-                        <form method="post" action="Alterarclie$cliente.php">
-                                <input name="id" type="hidden" value="<?php echo $value->id;?>"/>                  
+                        <form method="post" action="alterarCliente.php">
+                                <input name="idCliente" type="hidden" value="<?php echo $value->id;?>"/>                  
                                 <input name="nome" type="hidden" value="<?php echo $value->nome;?>"/>
 
                                 <button name="alterar" type="submit">Alterar</button>
                          </form>
-<td>
+                        <td>
                             <form method="post" >
-                                <input name="id" type="hidden" value="<?php echo $value->id;?>"/>
+                                <input name="idCliente" type="hidden" value="<?php echo $value->id;?>"/>
                                 <button name="excluir" type="submit" >Excluir</button>
                             </form>
                         </td>

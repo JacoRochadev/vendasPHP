@@ -6,6 +6,7 @@ class Vendas
     private $idVenda;
     private $idCliente;
     private $valorVenda;
+    private $dataVenda;
     
     public function __construct()
     {
@@ -67,6 +68,26 @@ class Vendas
     public function setValorVenda($valorVenda)
     {
         $this->valorVenda = $valorVenda;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dataVenda
+     */ 
+    public function getDataVenda()
+    {
+        return $this->dataVenda;
+    }
+
+    /**
+     * Set the value of dataVenda
+     *
+     * @return  self
+     */ 
+    public function setDataVenda($dataVenda)
+    {
+        $this->dataVenda = $dataVenda;
 
         return $this;
     }
