@@ -5,7 +5,7 @@ class Vendas
 
     private $idVenda;
     private $idCliente;
-    private $valorVenda;
+    private $valorTotal;
     private $dataVenda;
     
     public function __construct()
@@ -55,9 +55,9 @@ class Vendas
     /**
      * Get the value of valorVenda
      */ 
-    public function getValorVenda()
+    public function getValorTotal()
     {
-        return $this->valorVenda;
+        return $this->valorTotal;
     }
 
     /**
@@ -65,9 +65,9 @@ class Vendas
      *
      * @return  self
      */ 
-    public function setValorVenda($valorVenda)
+    public function setValorTotal($valorTotal)
     {
-        $this->valorVenda = $valorVenda;
+        $this->valorTotal = $valorTotal;
 
         return $this;
     }

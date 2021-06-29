@@ -1,7 +1,7 @@
 <?php
 
 /**
- * contem metodos basicos para criar, deletar, Lê e apagar dados no BD
+ * contem metodos basicos para criar, deletar, Lê e apagar dadosVenda no BD
  */
 require_once './../../Model/Venda.php';
 require_once './../../Model/DB.php';
@@ -29,24 +29,24 @@ require_once './../../Model/DB.php';
     }
     
      //faz insert   
-    public function insert() {
-        $sql = "INSERT INTO $this->tabela (idCliente, valorVenda) VALUES (:idCliente, :valorVenda)";
+    public function insert($dadosVenda) {
+        $sql = "INSERT INTO $this->tabela (idcliente, valortotal) VALUES (?, ?)";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':idCliente', $this->idCliente);
-        $stm->bindParam(':valorVenda', $this->valorVenda);
+        $stm->bindValue(1, $dadosVenda['idcliente']);
+        $stm->bindValue(2, $dadosVenda['valortotal']);
 
-        return $stm->execute();
+        $stm->execute();
     }
     //update de itens
     public function update($id) {
         $sql = "UPDATE $this->tabela 
-        SET  = :valorVenda = :valorVenda 
-        AND :idCliente = :idCliente
+        SET  = :valorTotal = :valorTotal 
+        AND :idcliente = :idcliente
         WHERE id = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
-        $stm->bindParam(':idCliente', $this->idCliente);
-        $stm->bindParam(':valorVenda', $this->valorVenda);
+        $stm->bindParam(':idcliente', $this->idcliente);
+        $stm->bindParam(':valorTotal', $this->valorTotal);
 
         return $stm->execute();
     }

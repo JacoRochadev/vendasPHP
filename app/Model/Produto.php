@@ -1,8 +1,7 @@
 <?php
-##arquivo que implementa a tabela e seus atributos, acessa os metodos get e set
-require_once './../../Model/DB.php';    //inclui arquivo DB 
+require_once './../../Model/DB.php';    
 
- abstract class Produtos extends DB {   //faz herança do arquivo DB
+ abstract class Produtos extends DB {   
     
     private $idProduto;
     private $nome;
@@ -62,4 +61,5 @@ require_once './../../Model/DB.php';    //inclui arquivo DB
 
         return $this;
     }
+    
 }

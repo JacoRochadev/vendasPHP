@@ -13,7 +13,7 @@
         <div class="btn-group p-3 table">
             <a href="./app/VIew/ClienteView/cadastrarCliente.php"  class="btn btn-primary">Cliente</a>
             <a href="./app/VIew/ProdutoView/cadastrarProduto.php"  class="btn btn-primary">Produtos</a>
-            <a href="./app/VIew/VendaView.php/cadastrarVenda.php"  class="btn btn-primary">Vendas</a>
+            <a href="./app/VIew/VendaView/cadastrarVenda.php"  class="btn btn-primary">Vendas</a>
         </div>
     </div>
 </body>

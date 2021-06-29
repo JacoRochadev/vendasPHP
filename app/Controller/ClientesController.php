@@ -52,5 +52,9 @@ require_once './../../Model/DB.php';
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         return $stm->execute();
     }
+    public function selectAll(){
+        $sql = "SELECT * FROM $this->tabela";
+        $stm = DB::prepare($sql);
+    }
     
 }

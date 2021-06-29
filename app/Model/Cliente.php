@@ -29,4 +29,8 @@ require_once './../../Model/DB.php';    //inclui arquivo DB
 
         return $this;
     }
+    public function selectAll(){
+        $this->db->query("SELECT * FROM clientes");
+        return $this->db->resultados();
+    }
 }

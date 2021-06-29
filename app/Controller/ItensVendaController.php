@@ -29,29 +29,28 @@ require_once './../Model/DB.php';
     }
     
      //faz insert   
-     
-    public function insert() {
-        $sql = "INSERT INTO $this->tabela (idVenda, idProduto, quantidade, valorUnitario) VALUES (:idVenda, :idProduto, :quantidade, :valorUnitario)";
+    public function insert($dadosItensVenda) {
+        $sql = "INSERT INTO $this->tabela (idvenda, idproduto, quantidade, valorUnitario) VALUES (?, ?, ?, ?)";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':idVenda', $this->idVenda);
-        $stm->bindParam(':idProduto', $this->idProduto);
-        $stm->bindParam(':quantidade', $this->quantidade);
-        $stm->bindParam(':valorUnitario', $this->valorUnitario);
+        $stm->bindValue(1, $dadosItensVenda['idvenda']);
+        $stm->bindValue(2, $dadosItensVenda['idproduto']);
+        $stm->bindValue(3, $dadosItensVenda['quantidade']);
+        $stm->bindValue(4, $dadosItensVenda['valorUnitario']);
 
-        return $stm->execute();
+        $stm->execute();
     }
     //update de itens
     public function update($id) {
         $sql = "UPDATE $this->tabela 
         SET  = :valorUnitario = :valorUnitario 
         AND :quantidade = :quantidade
-        AND :idVenda = :idVenda
-        AND :idProduto = :idProduto 
+        AND :idvenda = :idvenda
+        AND :idproduto = :idproduto 
         WHERE id = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
-        $stm->bindParam(':idVenda', $this->idVenda);
-        $stm->bindParam(':idProduto', $this->idProduto);
+        $stm->bindParam(':idvenda', $this->idvenda);
+        $stm->bindParam(':idproduto', $this->idproduto);
         $stm->bindParam(':quantidade', $this->quantidade);
         $stm->bindParam(':valorUnitario', $this->valorUnitario);
         return $stm->execute();
