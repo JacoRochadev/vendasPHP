@@ -1,39 +1,57 @@
 <?php 
-require_once './../../Controller/ClientesController.php';
-$cliente = new ClientesController();
-$lista_clientes = $cliente->findAll();
-$total_clientes = count($lista_clientes);
+require_once './../../Controller/VendasController.php';
+$vendaC = new VendasController();
+$lista_vendas = $vendaC->findAll();
+$total_vendas = count($lista_vendas);
 
+require_once './../../Controller/ProdutosController.php';
+$produtoC = new ProdutosController();
+$lista_produtos = $produtoC->findAll();
+$total_produtos = count($lista_produtos);
 
 if(isset($_GET['salvar']))
 {
-    include './../../Controller/VendasController.php';
+    include './../../Controller/ItensVendaController.php';
 
-    $vendaC = new VendasController();
+    $itensVendaC = new ItensVendaController();
 
     $dados= array(
-        'idcliente' => $_POST["idcliente"],
-        'valortotal' => $_POST["valortotal"],
+        'idvenda' => $_POST["idvenda"],
+        'idproduto' => $_POST["idproduto"],
+        'quantidade' => $_POST["quantidade"],
+        'valorunitario' => $_POST["valorunitario"],
     );
-    $vendaC->insert($dados);
+    $itensVendaC->insert($dados);
     echo "Insert."; 
 }
 ?>
-
-
 <body>
-    <form action="cadastrarVenda.php?salvar=true" method="post">
-        <label>Valor da venda:
-            <input name="valortotal" type="numeric" value="<?= isset($dadosVenda) ? $dadosVenda->valortotal : "" ?>" />
+    <form action="cadastrarItensVenda.php?salvar=true" method="post">
+        <label>Valor item:
+            <input name="valorunitario" type="numeric" value="<?= isset($dadosItensVenda) ? $dadosItensVenda->valorunitario : "" ?>" />
+        </label>
+        <label>Quantidade:
+            <input name="quantidade" type="numeric" value="<?= isset($dadosItensVenda) ? $dadosItensVenda->quantidade : "" ?>" />
         </label>
 
-        <label>cliente:
-        <select name="idcliente">
-            <option>Selecione um cliente</option>
+        <label>Produto:
+        <select name="idproduto">
+            <option>Selecione um produto</option>
 
-            <?php for($i=0; $i<$total_clientes; $i++): ?>
-                <option value="<?= $lista_clientes[$i]->id ?>">
-                    <?= $lista_clientes[$i]->nome  ?> 
+            <?php for($i=0; $i<$total_produtos; $i++): ?>
+                <option value="<?= $lista_produtos[$i]->id?>">
+                    <?= $lista_produtos[$i]->nome?> 
+                </option>
+            <?php endfor ?>
+
+        </select>
+        </label>Venda:
+        <select name="idvenda">
+            <option>Selecione uma venda</option>
+
+            <?php for($i=0; $i<$total_vendas; $i++): ?>
+                <option value="<?= $lista_vendas[$i]->id ?>">
+                    <?= $lista_vendas[$i]->valortotal ?> 
                 </option>
             <?php endfor ?>
 

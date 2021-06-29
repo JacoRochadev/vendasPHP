@@ -3,8 +3,8 @@
 /**
  * contem metodos basicos para criar, deletar, Lê e apagar dados no BD
  */
-require_once './../Model/ItensVenda.php';
-require_once './../Model/DB.php';
+require_once './../../Model/ItensVenda.php';
+require_once './../../Model/DB.php';
 
  class ItensVendaController extends ItensVendas
  {
@@ -30,19 +30,20 @@ require_once './../Model/DB.php';
     
      //faz insert   
     public function insert($dadosItensVenda) {
-        $sql = "INSERT INTO $this->tabela (idvenda, idproduto, quantidade, valorUnitario) VALUES (?, ?, ?, ?)";
+        $this->setIdVenda(4);
+        $sql = "INSERT INTO $this->tabela (idvenda, idproduto, quantidade, valorunitario) VALUES (?, ?, ?, ?)";
         $stm = DB::prepare($sql);
         $stm->bindValue(1, $dadosItensVenda['idvenda']);
         $stm->bindValue(2, $dadosItensVenda['idproduto']);
         $stm->bindValue(3, $dadosItensVenda['quantidade']);
-        $stm->bindValue(4, $dadosItensVenda['valorUnitario']);
+        $stm->bindValue(4, $dadosItensVenda['valorunitario']);
 
         $stm->execute();
     }
     //update de itens
     public function update($id) {
         $sql = "UPDATE $this->tabela 
-        SET  = :valorUnitario = :valorUnitario 
+        SET  = :valorunitario = :valorunitario 
         AND :quantidade = :quantidade
         AND :idvenda = :idvenda
         AND :idproduto = :idproduto 
@@ -52,7 +53,7 @@ require_once './../Model/DB.php';
         $stm->bindParam(':idvenda', $this->idvenda);
         $stm->bindParam(':idproduto', $this->idproduto);
         $stm->bindParam(':quantidade', $this->quantidade);
-        $stm->bindParam(':valorUnitario', $this->valorUnitario);
+        $stm->bindParam(':valorunitario', $this->valorunitario);
         return $stm->execute();
     }
     
